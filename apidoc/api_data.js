@@ -3,6 +3,7 @@ define({ "api": [
     "type": "delete",
     "url": "/delete/:id",
     "title": "Remove a cat",
+    "description": "<p>Delete an entry from cats database</p>",
     "group": "Cats",
     "parameter": {
       "fields": {
@@ -44,6 +45,7 @@ define({ "api": [
     "type": "get",
     "url": "/all",
     "title": "Get all cats",
+    "description": "<p>Get all entries from cats database</p>",
     "group": "Cats",
     "success": {
       "fields": {
@@ -132,6 +134,7 @@ define({ "api": [
     "type": "get",
     "url": "/find/:id",
     "title": "Get cat by id",
+    "description": "<p>Find an entry from cats database</p>",
     "group": "Cats",
     "parameter": {
       "fields": {
@@ -233,6 +236,7 @@ define({ "api": [
     "type": "post",
     "url": "/post",
     "title": "Add a new cat",
+    "description": "<p>Add a new entry to cats database</p>",
     "group": "Cats",
     "parameter": {
       "fields": {
@@ -384,6 +388,7 @@ define({ "api": [
     "url": "/update/:id",
     "title": "Update a Cat",
     "group": "Cats",
+    "description": "<p>Update an entry of the cats database</p>",
     "parameter": {
       "fields": {
         "Parameter": [
