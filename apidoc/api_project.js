@@ -1,7 +1,7 @@
 define({
-  "name": "Cats API documentation",
+  "name": "SSSF final project",
   "version": "1.0.0",
-  "description": "CRUD methods for cats",
+  "description": "The API documentation for sssf final project",
   "template": {
     "forceLanguage": "en"
   },
@@ -10,7 +10,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2018-04-08T12:27:34.385Z",
+    "time": "2018-04-27T21:58:29.873Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }
