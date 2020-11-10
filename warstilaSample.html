@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Warstila Sample</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+        window.onload = function () {
+        var ImageMap = function (map) {
+            var n,
+                areas = map.getElementsByTagName('area'),
+                len = areas.length,
+                coords = [],
+                previousWidth = 1000;
+            for (n = 0; n < len; n++) {
+                coords[n] = areas[n].coords.split(',');
+            }
+            this.resize = function () {
+                var n, m, clen,
+                    x = document.body.clientWidth / previousWidth;
+                for (n = 0; n < len; n++) {
+                    clen = coords[n].length;
+                    for (m = 0; m < clen; m++) {
+                        coords[n][m] *= x;
+                    }
+                    areas[n].coords = coords[n].join(',');
+                }
+                previousWidth = document.body.clientWidth;
+                return true;
+            };
+            window.onresize = this.resize;
+        },
+        imageMap = new ImageMap(document.getElementById('map_ID'));
+    imageMap.resize();
+}
+
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover({
+                trigger: 'hover'
+            }).addClass('popover');
+            $('[data-toggle="engine"]').popover({
+                trigger: 'hover',
+                placement:'right'        
+            }).addClass('engine');
+        });
+    </script>
+    <style>
+        body{
+            margin-left: 10%;
+            min-width: 1000px;
+        }
+        .popover {
+            margin-top: 39%;
+            margin-left: 9%;
+            max-width: 500px;
+        }
+        .engine{
+            margin-top: 30%;
+            margin-left: -20%;
+            max-width: 500px;
+        }
+        .media-img{
+            width: 150px;
+        }
+
+        .media-body {
+            width: 800px;
+        }
+        area{
+            border:4px solid red
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Warstila sample demo</h1>
+    <img src="assets/sampleImg.jpg" id="img_ID"  width="80%" border="0" usemap="#map" />
+
+    <map name="map" id="map_ID">
+        <!-- #$-:Image map file created by GIMP Image Map plug-in -->
+        <!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+        <!-- #$-:Please do not edit lines starting with "#$" -->
+        <!-- #$VERSION:2.3 -->
+        <!-- #$AUTHOR:Sagar -->
+        <a href="#" data-toggle="popover" data-placement="right" data-html="true" data-container="body" data-content="
+        <div class='media'>
+            <img class='media-img' src='assets/propeller.png' class='mr-3' alt='Sample Image'>
+            <div class='media-body'>
+                <h5 class='media-heading'>New propellers</h5>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            </div>
+            ">
+            <area shape="circle" id="engine" coords="62,400,59" border='0' href="javascript:;" />
+        </a>
+
+        <a href="#" data-toggle="engine"  data-html="true" data-container="body" data-content="
+        <div class='media'>
+            <img class='media-img' src='assets/engine.png' class='mr-3' alt='Sample Image'>
+            <div class='media-body'>
+                <h5 class='media-heading'>New Engines</h5>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            </div>
+            ">
+        <area shape="circle" id="propeller" coords="600,380,49" href="javascript:;" /></a>
+    </map>
+
+
+
+
+</body>
+
+</html>
