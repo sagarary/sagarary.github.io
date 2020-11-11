@@ -48,11 +48,11 @@
         $(document).ready(function () {
             $('[data-toggle="popover"]').popover({
                 trigger: 'hover',
-                placement:'right'
+                placement:'bottom'
             }).addClass('popover');
             $('[data-toggle="engine"]').popover({
                 trigger: 'hover',
-                placement:'right'        
+                placement:'left'        
             }).addClass('engine');
         });
     </script>
@@ -61,22 +61,21 @@
             margin-left: 10%;
         }
         .popover {
-            margin-top: 20%;
-            margin-left: 40%;
-            margin-bottom: auto;
-            max-width: 500px;
+            margin-top: 17%;
+            margin-left: 65%;
+            max-width: 400px;
         }
         .engine{
-            margin-top: -35%;
-            margin-left: -40%;
-            max-width: 500px;
+            margin-left: -50%;
+            margin-top: -30%;
+            max-width: 400px;
         }
         .media-img{
-            width: 150px;
+            width: 100px;
         }
 
         .media-body {
-            width: 800px;
+            width: 500px;
         }
         area{
             z-index: 3;
@@ -89,9 +88,9 @@
 
 <body>
     <h1>Image Mapping sample demo</h1>
-    <img src="assets/shipImg.png" id="img_ID"  width="80%" border="0" usemap="#map" />
+    <img src="assets/shipScaled.png" id="img_ID"  width="80%" border="0" usemap="#map" />
 
-    <map name="map">
+    <map name="map" id="map_ID">
         <!-- #$-:Image map file created by GIMP Image Map plug-in -->
         <!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
         <!-- #$-:Please do not edit lines starting with "#$" -->
@@ -102,23 +101,24 @@
             <img class='media-img' src='assets/engine.png' class='mr-3' alt='Sample Image'>
             <div class='media-body'>
                 <h5 class='media-heading'>New Engines</h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>The detaled information about the new engines goes here. </p>
             </div>
             </div>
             ">
-        <area shape="rect" coords="1100,450,1400,600" alt="Engine" href="javascript:;" />
-        </a>
-        <a href="#" data-toggle="popover"  data-html="true" data-container="body" data-content="
+      
+        <area shape="rect" coords="500,200,625,260" alt="Engine" href="javascript:;" />
+       </a>
+      
+       <a href="#" data-toggle="popover"  data-html="true" data-container="body" data-content="
         <div class='media'>
             <img class='media-img' src='assets/propeller.png' class='mr-3' alt='Sample Image'>
             <div class='media-body'>
                 <h5 class='media-heading'>New propellers</h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Further details about changes in propeller designs goes here</p>
             </div>
             </div>
             ">
-        <area shape="circle" coords="1694,622,50" alt="Propeller" href="javascript:;" />
-        </a>
+                   <area shape="circle" coords="750,300,40" alt="Propeller" href="javascript:;" />
         
         </map>
 
